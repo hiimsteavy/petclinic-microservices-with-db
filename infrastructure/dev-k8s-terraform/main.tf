@@ -92,6 +92,10 @@ resource "aws_instance" "kube-master" {
   key_name = "andykp"
   subnet_id = "subnet-0b7a45f675d5d3735" 
   availability_zone = "us-east-1a"
+  root_block_device {
+    volume_size = 16
+    volume_type = "gp3"
+  }
   tags = {
     Name = "kube-master"
     Project = "tera-kube-ans"
